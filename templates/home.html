@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}fastapi blog - {{ title }}{% else %} fastapi blog {% endif %}</title>
+</head>
+<body>
+    {% for post in posts %}
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.content }}</p>
+        {% if not loop.last %}
+            <hr>
+        {% endif %}
+    {% endfor %}
+
+</body>
+</html>
